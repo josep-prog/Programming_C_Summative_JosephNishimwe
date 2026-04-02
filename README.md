@@ -9,6 +9,7 @@
 | Data Analysis Toolkit Using Function Pointers and Callbacks | **[Project4](https://github.com/josep-prog/Programming_C_Summative_JosephNishimwe/blob/main/toolkit.c)**  |
 | Multi-threaded Web Scraper | **[Project5](https://github.com/josep-prog/Programming_C_Summative_JosephNishimwe/blob/main/scraper.c)**  |
 | Smart Traffic Light Controller with Embedded Simulation and PCB Design | **[view setup on tinkercard](https://www.tinkercad.com/things/kGNADKLfpu3/editel?returnTo=%2Fdashboard%2Fdesigns%2Fall&sharecode=NTuUN1g8f5Pgf3aA4MyZ2CTWlG_ybwyzzkQV0P55qFU)**  |
+| DemoVideo | **[DemoVideo](https://youtu.be/YB-yMgFkZes)**  |
 
 # 
 
@@ -30,7 +31,7 @@ So the lights were not broken at all. The program was simply waiting for a comma
 
 handle\_menu(1);
 
-That got the lights moving. But then I looked at the rest of the code and realized there was a deeper problem. The code was over 200 lines long and included logging, a serial menu, manual override commands, and a state machine with both a cycle\_running boolean and a cycle\_phase integer tracking things separately. For me, coming from a C background and being new to Arduino, it was difficult to follow what was actually doing the important work and what was just extra. The actual logic of a traffic light is really just four steps repeating forever  A goes green, A goes yellow, B goes green, B goes yellow, then back to the start. All the extra features were hiding that simple truth.
+That got the lights moving. But then I looked at the rest of the code and realized there was a deeper problem. The code was over 200 lines long and included logging, a serial menu, manual override commands, and a state machine with both a cycle\_running boolean and a cycle\_phase integer tracking things separately. The actual logic of a traffic light is really just four steps repeating forever  A goes green, A goes yellow, B goes green, B goes yellow, then back to the start. All the extra features were hiding that simple truth.
 
 I also kept the adaptive green time feature because it connected the buttons to the actual behavior  when I press a button, it adds a vehicle to that intersection’s count, and that count changes how long the green light stays on:
 
@@ -95,7 +96,7 @@ struct Student \*tmp \= realloc(students, new\_cap \* sizeof(struct Student));
 
 I also learned an important safety rule:
 
-Never assign realloc directly — always use a temporary pointer.
+Never assign realloc directly always use a temporary pointer.
 
 ### **Sorting Without Built-in Functions**
 
